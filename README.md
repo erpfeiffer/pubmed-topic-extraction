@@ -1,6 +1,6 @@
-# Pubmed Topic Extraction
+# Pubmed Topic Modeling
 
-What are common subtopics, and their distribution over time, within the hundreds to thousands of publication records pulled down from a Pubmed search?
+What are common subtopics, and their distribution over time, within the hundreds to thousands of publication records pulled down with a Pubmed search?
 
 This project implements gensim's Latent Dirichlet Allocation (LDA) module to identify topics in a data set based on a user-specified Pubmed search query. Common topics and their associated terms are visualized using networkx. Topic frequency and distribution over time are also examined.
 
