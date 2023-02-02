@@ -77,7 +77,7 @@ def cleandata(inputresultdf):
     print('Extrapolating Missing Publication Dates...')    
     NewDate = outputresultdf.loc[:, 'DP'].copy() 
     for row in outputresultdf.itertuples():
-        if type(row.DP) is pd.tslib.NaTType:
+        if type(row.DP) is pd.NaT:
             if (type(row.PHST) is not float):
                 takedatestring = str(outputresultdf.PHST[row.Index]) 
                 NewDate[row.Index] = pd.to_datetime(takedatestring.split("'")[-2].split(" ")[0])
@@ -168,7 +168,7 @@ def topicnetwork(inputarray, numtops):
         getstarseries.append(topiclist[i])
         for term in inputarray['TopicTerms'][i]:
             getstarseries.append(term)
-        G.add_star(getstarseries)
+        nx.add_star(G,getstarseries)
     nx.draw_networkx(G, node_size=10, edge_color='r', font_color='k', font_weight='bold') 
     plt.title('Topic Term Distribution Network')
     plt.show()    
